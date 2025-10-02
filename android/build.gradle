@@ -1,0 +1,22 @@
+// เวอร์ชันปลั๊กอินต่าง ๆ ถูกกำหนดไว้ใน settings.gradle แล้ว
+buildscript {
+    // ไม่ต้องใส่ classpath ใด ๆ ตรงนี้
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.buildDir = "../build"
+
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+    project.evaluationDependsOn(":app")
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}

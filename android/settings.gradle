@@ -1,0 +1,31 @@
+pluginManagement {
+    // ให้ Flutter จัดการ Gradle helper ของ Android
+    def flutterSdk = {
+        def env = System.getenv("FLUTTER_ROOT")
+        if (env != null) return env
+        def p = new Properties()
+        def f = new File(settingsDir, "local.properties")
+        if (f.exists()) {
+            p.load(f.newDataInputStream())
+            return p.getProperty("flutter.sdk")
+        }
+        throw new GradleException("Flutter SDK not found. Set FLUTTER_ROOT or local.properties (flutter.sdk).")
+    }()
+    includeBuild("${flutterSdk}/packages/flutter_tools/gradle")
+
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+plugins {
+    // **อย่า** เปลี่ยนเวอร์ชันนี้เอง เว้นออกประกาศจาก Flutter
+    id "dev.flutter.flutter-plugin-loader" version "1.0.0"
+    id "com.android.application" version "8.3.2" apply false
+    id "org.jetbrains.kotlin.android" version "1.9.22" apply false
+    id "com.google.gms.google-services" version "4.4.2" apply false
+}
+
+include ":app"

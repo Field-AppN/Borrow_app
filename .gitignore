@@ -1,0 +1,43 @@
+# =======================
+# Flutter & Dart
+# =======================
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+build/
+ios/Flutter/.last_build_id
+
+# =======================
+# IDE & Editor
+# =======================
+.idea/
+.vscode/
+*.iml
+
+# =======================
+# Firebase / Secrets
+# =======================
+.firebase/
+firebase-debug.log
+*.secret.json
+*.key.json
+*.serviceAccount.json
+*firebase-adminsdk-*.json
+*serviceAccount*.json
+**/serviceAccountKey.json
+
+# =======================
+# Node / Functions
+# =======================
+node_modules/
+functions/node_modules/
+functions/.env
+functions/.runtimeconfig.json
+
+# =======================
+# Others
+# =======================
+.DS_Store
+*.log

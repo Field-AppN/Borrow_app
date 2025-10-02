@@ -1,0 +1,54 @@
+plugins {
+    id "com.android.application"
+    id "org.jetbrains.kotlin.android"
+    id "dev.flutter.flutter-gradle-plugin"
+    id "com.google.gms.google-services"
+}
+
+android {
+    // ควรตรงกับ package_name ใน google-services.json (ของคุณมี client ชื่อ com.example.borrow_app)
+    namespace "com.example.borrow_app"
+
+    compileSdkVersion 34
+
+    defaultConfig {
+        applicationId "com.example.borrow_app"
+        minSdkVersion flutter.minSdkVersion
+        targetSdkVersion 34
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            // ใช้ debug keystore ชั่วคราว (เปลี่ยนเป็น keystore จริงก่อนปล่อยขึ้น Store)
+            signingConfig signingConfigs.debug
+            shrinkResources false
+            minifyEnabled false
+            // ถ้าจะใช้ R8 ให้ใส่ไฟล์ proguard แล้วเปิดบรรทัดด้านล่าง
+            // proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            signingConfig signingConfigs.debug
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = "17"
+    }
+}
+
+flutter {
+    source '../..'
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+    // ถ้าใช้ Firebase ผ่านแพ็กเกจของ Flutter จะไม่ต้องระบุ dependency ตรงนี้เพิ่ม
+    // implementation platform('com.google.firebase:firebase-bom:33.3.0')
+}

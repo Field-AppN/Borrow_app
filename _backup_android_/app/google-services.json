@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "696893837141",
+    "project_id": "borrow-app-12345",
+    "storage_bucket": "borrow-app-12345.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:696893837141:android:cc44c103e211932a2569dc",
+        "android_client_info": {
+          "package_name": "com.example.asset_management_system"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlQ6nEXvCV6rBwWZbMaRBkW-GH7B1baS4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:696893837141:android:2199754a1d7f85662569dc",
+        "android_client_info": {
+          "package_name": "com.example.borrow_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlQ6nEXvCV6rBwWZbMaRBkW-GH7B1baS4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

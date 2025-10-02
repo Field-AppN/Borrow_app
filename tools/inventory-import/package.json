@@ -1,0 +1,13 @@
+{
+  "name": "inventory-import",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "import": "node import_inventory.cjs"
+  },
+  "dependencies": {
+    "@google-cloud/storage": "^7.17.0",
+    "firebase-admin": "^12.7.0",
+    "xlsx": "^0.18.5"
+  }
+}
